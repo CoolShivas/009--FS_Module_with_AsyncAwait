@@ -60,19 +60,19 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-const createFileFunc = async () => {
-    try {
-      await fsPro.writeFile(
-        filePath,
-        "Formation of file using Promises and Async/Await.",
-        "utf-8"
-      );
-      console.log("File Created Successfully!");
-    } catch (err) {
-      console.log("Error Creating File", err);
-    }
-  };
-  createFileFunc();
+// const createFileFunc = async () => {
+//     try {
+//       await fsPro.writeFile(
+//         filePath,
+//         "Formation of file using Promises and Async/Await.",
+//         "utf-8"
+//       );
+//       console.log("File Created Successfully!");
+//     } catch (err) {
+//       console.log("Error Creating File", err);
+//     }
+//   };
+//   createFileFunc();
 
 
 // // // // Here, we are getting the Output on Terminal as :-
@@ -90,6 +90,41 @@ const createFileFunc = async () => {
  */
 
 
+
+////////************************************************************************************* */
+/////-------------------------------------------------------------------------------------------
+////////************************************************************************************* */
+
+
+
+const readFileFunc = async () => {
+    try {
+        const data = await fsPro.readFile(filePath, 'utf-8');
+        console.log(data);
+    } catch (err) {
+        console.log("Error Reading File", err);
+    }
+};
+readFileFunc();
+
+
+// // // // Here, we are getting the Output on Terminal as :-
+// // // // Formation of file using Promises and Async/Await.
+
+
+
+
+/**
+ * 
+ * Reading a File :- fsPromises.readFile() :- Reads the contents of a file asynchronously.
+ *
+ * 
+ * // ! syntax :- fsPromises.readFile(path, options);
+ * // ? path :- The file path to read.
+ * // ? options :- Optional. Can specify encoding (e.g., 'utf8') or return a Buffer if no encoding is provided.
+ * 
+ * 
+ */
 
 ////////************************************************************************************* */
 /////-------------------------------------------------------------------------------------------
