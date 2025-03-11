@@ -133,15 +133,15 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-const updateFileFunc = async () => {
-    try {
-        await fsPro.appendFile(filePath, "\nUpdating the status.", 'utf-8')
-        console.log("File Updated Successfully!");
-    } catch (err) {
-        console.log("Error Updating File", err);
-    }
-};
-updateFileFunc();
+// const updateFileFunc = async () => {
+//     try {
+//         await fsPro.appendFile(filePath, "\nUpdating the status.", 'utf-8')
+//         console.log("File Updated Successfully!");
+//     } catch (err) {
+//         console.log("Error Updating File", err);
+//     }
+// };
+// updateFileFunc();
 
 
 // // // // Here, we are getting the Output on Terminal as :-
@@ -165,3 +165,33 @@ updateFileFunc();
 ////////************************************************************************************* */
 /////-------------------------------------------------------------------------------------------
 ////////************************************************************************************* */
+
+
+
+
+const deleteFileFunc = async () => {
+    try {
+        await fsPro.unlink(filePath);
+        console.log("File Deleted Successfully!");
+    } catch (err) {
+        console.log("Error Deleting File", err);
+    }
+};
+deleteFileFunc();
+
+
+// // // // Here, we are getting the Output on Terminal as :-
+// // // // File Deleted Successfully!
+// // // // Therefore, file named as "fsProAsyAwait.txt" is now deleted.
+
+
+/***
+ * 
+ * Deleting a File : fsPromises.unlink() :- Deletes a file by its path.
+ * 
+ * 
+ * // ! syntax :- fsPromises.unlink(path).
+ * // ? path : The file path to delete.
+ * 
+ * 
+ */
