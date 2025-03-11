@@ -97,15 +97,15 @@ const filePath = path.join(__dirname, fileName);
 
 
 
-const readFileFunc = async () => {
-    try {
-        const data = await fsPro.readFile(filePath, 'utf-8');
-        console.log(data);
-    } catch (err) {
-        console.log("Error Reading File", err);
-    }
-};
-readFileFunc();
+// const readFileFunc = async () => {
+//     try {
+//         const data = await fsPro.readFile(filePath, 'utf-8');
+//         console.log(data);
+//     } catch (err) {
+//         console.log("Error Reading File", err);
+//     }
+// };
+// readFileFunc();
 
 
 // // // // Here, we are getting the Output on Terminal as :-
@@ -125,6 +125,42 @@ readFileFunc();
  * 
  * 
  */
+
+////////************************************************************************************* */
+/////-------------------------------------------------------------------------------------------
+////////************************************************************************************* */
+
+
+
+
+const updateFileFunc = async () => {
+    try {
+        await fsPro.appendFile(filePath, "\nUpdating the status.", 'utf-8')
+        console.log("File Updated Successfully!");
+    } catch (err) {
+        console.log("Error Updating File", err);
+    }
+};
+updateFileFunc();
+
+
+// // // // Here, we are getting the Output on Terminal as :-
+// // // // File Updated Successfully!
+
+
+/**
+ * 
+ * Appending Data : fsPromises.appendFile() :- Adds content to the end of a file. If the file does not exist, it creates a new one.
+ * 
+ * 
+ * // ! syntax :- fsPromises.appendFile(path, data, options).
+ * // ? path :- The file path to read.
+ * // ? options :- Optional. Can specify encoding (e.g., 'utf8') or return a Buffer if no encoding is provided.
+ * 
+ * 
+ */
+
+
 
 ////////************************************************************************************* */
 /////-------------------------------------------------------------------------------------------
